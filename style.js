@@ -69,5 +69,24 @@ export default StyleSheet.create({
     },
     headerTitle: {
         color: 'white',
-    }
+    },
+    color: {
+        color: 'blue',
+    },
+    item: {
+        padding: 10,
+        borderBottomWidth: 1,
+        borderBottomColor: '#ccc',
+    },
+    date: {
+        fontSize: 16,
+        fontWeight: 'bold',
+    },
+    temperature: {
+        fontSize: 14,
+    },
+    weather: {
+        fontSize: 14,
+        fontStyle: 'italic',
+    },
 })
