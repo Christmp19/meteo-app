@@ -1,43 +1,63 @@
-import React from 'react'
-import { View, Text, StyleSheet, TextInput } from 'react-native'
+import React from 'react';
+import { View, Text, TextInput, TouchableOpacity } from 'react-native';
+import style from '../style';
+import { createStackNavigator } from '@react-navigation/stack';
+import List from './List';
 
-export default class Home extends React.Component {
+class Search extends React.Component {
 
     constructor(props) {
-        super(props)
+        super(props);
         this.state = {
             city: 'Montpellier'
-        }
+        };
     }
 
     setCity = (text) => {
         this.setState({ city: text });
     }
 
+    submit = () => {
+        this.props.navigation.navigate('Result', { city: this.state.city });
+    }
+
     render() {
         return (
-            <TextInput
-                underlineColorAndroid="transparent"
-                onChangeText={(text) => this.setCity(text)}
-                style={styles.textinput}
-                value={this.state.city}
-                // placeholder="Enter your city"
-                // placeholderTextColor="red"
-                // selectionColor="green"
-            />
-        )
+            <View style={style.viewSearch}>
+                <TextInput
+                    underlineColorAndroid="transparent"
+                    onChangeText={(text) => this.setCity(text)}
+                    style={style.textinputSearch}
+                    value={this.state.city}
+                />
+                <TouchableOpacity style={style.button} onPress={this.submit}>
+                    <Text style={style.buttonText}>Rechercher</Text>
+                </TouchableOpacity>
+            </View>
+        );
     }
 }
 
-const styles = StyleSheet.create({
-    textinput: {
-        height: 40,
-        width: '80%',
-        borderColor: 'red',
-        borderWidth: 1,
-        borderRadius: 5,
-        marginBottom: 10,
-        padding: 20,
-        color: 'red'
-    }
-})
+const Stack = createStackNavigator();
+
+const SearchStack = () => {
+    return (
+        <Stack.Navigator>
+            <Stack.Screen name="back" component={Search} options={{
+                headerShown: false,
+                headerStyle: {
+                    backgroundColor: 'blue',
+                },
+            }} />
+            <Stack.Screen
+                name="Result"
+                component={List}
+                options={({ route }) => ({
+                    title: 'Méteo / ' + route.params.city,
+                    headerShown: true,
+                })} />
+        </Stack.Navigator>
+    );
+};
+
+export default SearchStack;
