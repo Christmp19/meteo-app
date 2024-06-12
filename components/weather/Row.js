@@ -1,8 +1,9 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image } from 'react-native';
+import { View, Text, Image } from 'react-native';
 import PropTypes from 'prop-types';
 import moment from 'moment'
 import FadeInView from '../animation/fadeInView';
+import style from '../../style';
 
 export default class Row extends React.Component {
     static propTypes = {
@@ -13,7 +14,7 @@ export default class Row extends React.Component {
     day() { 
         let day = moment(this.props.days.dt * 1000).format('ddd');
         return (
-            <Text style={[styles.white, styles.bold]}>{day.toUpperCase()}</Text>
+            <Text style={[style.white, style.bold]}>{day.toUpperCase()}</Text>
         )
     }
 
@@ -44,7 +45,7 @@ export default class Row extends React.Component {
     date() {
         let day = moment(this.props.days.dt * 1000).format('DD/MM');
         return (
-            <Text style={[styles.white]}>{day}</Text>
+            <Text style={[style.white]}>{day}</Text>
         )
     }
 
@@ -54,13 +55,13 @@ export default class Row extends React.Component {
         if (this.props.index === 0) {
             return (
                 <FadeInView delay={this.props.index * 50}>
-                    <View style={styles.firstView}>
+                    <View style={style.firstView}>
                         <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'center', gap: 10 }}>
                             <Text style={{ color: 'white' }}>{this.day()} {this.date()}</Text>
                             <Text>{this.icon(90)}</Text>
                         </View>
                         <View>
-                            <Text style={[styles.temp, { fontSize: 35 }]}>
+                            <Text style={[style.temp, { fontSize: 35 }]}>
                                 {Math.round(days.temp.day)}°C
                             </Text>
                             <Text style={{ color: 'white', fontSize: 15 }}>
@@ -75,12 +76,12 @@ export default class Row extends React.Component {
         } else {
             return (
                 <FadeInView delay={this.props.index * 50}>
-                    <View style={styles.view}>
+                    <View style={style.view}>
                         <View style={{ flex: 1, flexDirection: 'row', alignItems: 'center', gap: 10 }}>
                             <Text>{this.icon()}</Text>
-                            <Text style={styles.day}>{this.day()} {this.date()}</Text>
+                            <Text style={style.day}>{this.day()} {this.date()}</Text>
                         </View>
-                        <Text style={styles.temp}>{Math.round(days.temp.day)}°C</Text>
+                        <Text style={style.temp}>{Math.round(days.temp.day)}°C</Text>
 
                     </View>
                </FadeInView>
@@ -88,44 +89,3 @@ export default class Row extends React.Component {
         }
     }
 }
-
-const styles = StyleSheet.create({
-    white: {
-        color: 'white'
-    },
-    bold: {
-        fontWeight: 'bold'
-    },
-    firstView: {
-        backgroundColor: '#28A8F6',
-        borderWidth: 0,
-        borderBottomWidth: 1,
-        borderBottomColor: '#202340',
-        paddingHorizontal: 20,
-        paddingVertical: 15,
-        flex: 1,
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-    },
-    view: {
-        backgroundColor: '#394163',
-        borderWidth: 0,
-        borderBottomWidth: 1,
-        borderBottomColor: '#202340',
-        paddingHorizontal: 20,
-        paddingVertical: 20,
-        flex: 1,
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-    },
-    temp: {
-        color: 'white',
-        fontSize: 22,
-        fontWeight: 'bold',
-    },
-    day: {
-
-    }
-});

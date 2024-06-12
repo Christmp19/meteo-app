@@ -97,4 +97,42 @@ export default StyleSheet.create({
         textTransform: 'capitalize',
         marginBottom: 20
     },
+    white: {
+        color: 'white'
+    },
+    bold: {
+        fontWeight: 'bold'
+    },
+    firstView: {
+        backgroundColor: '#28A8F6',
+        borderWidth: 0,
+        borderBottomWidth: 1,
+        borderBottomColor: '#202340',
+        paddingHorizontal: 20,
+        paddingVertical: 15,
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+    },
+    view: {
+        backgroundColor: '#394163',
+        borderWidth: 0,
+        borderBottomWidth: 1,
+        borderBottomColor: '#202340',
+        paddingHorizontal: 20,
+        paddingVertical: 20,
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+    },
+    temp: {
+        color: 'white',
+        fontSize: 22,
+        fontWeight: 'bold',
+    },
+    day: {
+
+    }
 })
