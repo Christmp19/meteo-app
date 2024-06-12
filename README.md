@@ -1,5 +1,7 @@
 # My Universal React Project
 
+![Template Screenshot](cover.png?raw=true "Template Screenshot")
+
 <p>
   <!-- iOS -->
   <a href="https://itunes.apple.com/app/apple-store/id982107779">
