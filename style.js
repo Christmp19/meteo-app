@@ -23,18 +23,19 @@ export default StyleSheet.create({
         flex: 1,
         justifyContent: 'start',
         alignItems: 'center',
-        marginVertical: 30,
+        marginVertical: 50,
     },
     textinputSearch: {
-        height: 40,
+        height: 50,
         width: '80%',
         borderColor: 'blue',
         borderWidth: 1,
         borderRadius: 5,
         marginBottom: 10,
-        padding: 20,
+        paddingHorizontal: 20,
         color: 'blue',
         textTransform: 'capitalize',
+        fontSize: 16
     },
     viewAbout: {
         margin: 20,

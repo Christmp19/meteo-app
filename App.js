@@ -19,7 +19,7 @@ export default class App extends React.Component {
             tabBarIcon: ({ focused, color, size }) => {
               let iconName;
 
-              if (route.name === 'Search') {
+              if (route.name === 'Home') {
                 iconName = 'home';
               } else if (route.name === 'About') {
                 iconName = 'user-circle-o';
@@ -53,11 +53,11 @@ export default class App extends React.Component {
           })}
         >
           <Tab.Screen
-            name="Search"
+            name="Home"
             component={Search}
             options={({ route }) => ({
-              headerShown: route.name === 'Search' ? true : false,
-              title: route.name === 'Search' ? 'Rechercher une ville' : 'Search',
+              headerShown: route.name === 'Home' ? true : false,
+              title: route.name === 'Home' ? 'Rechercher une ville' : 'Home',
               headerStyle: {
                 backgroundColor: 'blue',
               },

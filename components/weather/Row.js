@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet, Image } from 'react-native';
 import PropTypes from 'prop-types';
 import moment from 'moment'
-import { FontAwesome5, Feather } from '@expo/vector-icons';
+import FadeInView from '../animation/fadeInView';
 
 export default class Row extends React.Component {
     static propTypes = {
@@ -37,7 +37,7 @@ export default class Row extends React.Component {
 
             return <Image source={image} style={{ width: size, height: size }} />;
         } else {
-            return null; // Ou tout autre composant ou texte que vous souhaitez afficher dans ce cas
+            return null;
         }
     }
 
@@ -53,26 +53,37 @@ export default class Row extends React.Component {
 
         if (this.props.index === 0) {
             return (
-                <View style={styles.firstView}>
-                    <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'center', gap: 10 }}>
-                        <Text style={{ color: 'white' }}>{this.day()} {this.date()}</Text>
-                        <Text>{this.icon(90)}</Text>
-                    </View>
-                    <Text style={[styles.temp, {fontSize: 35}]}>{Math.round(days.temp.day)}°C</Text>
+                <FadeInView delay={this.props.index * 50}>
+                    <View style={styles.firstView}>
+                        <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'center', gap: 10 }}>
+                            <Text style={{ color: 'white' }}>{this.day()} {this.date()}</Text>
+                            <Text>{this.icon(90)}</Text>
+                        </View>
+                        <View>
+                            <Text style={[styles.temp, { fontSize: 35 }]}>
+                                {Math.round(days.temp.day)}°C
+                            </Text>
+                            <Text style={{ color: 'white', fontSize: 15 }}>
+                                {moment(this.props.days.timezone).format('HH:mm')}
+                            </Text>
+                        </View>
 
-                </View>
+                    </View>
+                </FadeInView>
             );
 
         } else {
             return (
-                <View style={styles.view}>
-                    <View style={{ flex: 1, flexDirection: 'row', alignItems: 'center', gap: 10 }}>
-                        <Text>{this.icon()}</Text>
-                        <Text style={styles.day}>{this.day()} {this.date()}</Text>
-                    </View>
-                    <Text style={styles.temp}>{Math.round(days.temp.day)}°C</Text>
+                <FadeInView delay={this.props.index * 50}>
+                    <View style={styles.view}>
+                        <View style={{ flex: 1, flexDirection: 'row', alignItems: 'center', gap: 10 }}>
+                            <Text>{this.icon()}</Text>
+                            <Text style={styles.day}>{this.day()} {this.date()}</Text>
+                        </View>
+                        <Text style={styles.temp}>{Math.round(days.temp.day)}°C</Text>
 
-                </View>
+                    </View>
+               </FadeInView>
             );
         }
     }

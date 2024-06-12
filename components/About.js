@@ -4,7 +4,7 @@ import style  from '../style'
 
 export default class About extends React.Component {
     search() {
-        this.props.navigation.navigate('Search')
+        this.props.navigation.navigate('Home')
     }
 
     render() {
