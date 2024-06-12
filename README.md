@@ -1,6 +1,12 @@
 # My Universal React Project
 
-<img src="cover.png?raw=true" alt="Template Screenshot" width="300">
+<table>
+  <tr>
+    <td align="center">
+      <img src="cover.png?raw=true" alt="Template Screenshot" width="300">
+    </td>
+  </tr>
+</table>
 
 <p>
   <!-- iOS -->
