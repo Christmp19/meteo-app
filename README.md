@@ -1,6 +1,6 @@
 # My Universal React Project
 
-![Template Screenshot](cover.png?raw=true "Template Screenshot")
+<img src="cover.png?raw=true" alt="Template Screenshot" width="300">
 
 <p>
   <!-- iOS -->
