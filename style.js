@@ -33,7 +33,8 @@ export default StyleSheet.create({
         borderRadius: 5,
         marginBottom: 10,
         padding: 20,
-        color: 'blue'
+        color: 'blue',
+        textTransform: 'capitalize',
     },
     viewAbout: {
         margin: 20,
@@ -56,9 +57,9 @@ export default StyleSheet.create({
     },
     viewList: {
         flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
         marginVertical: 30,
+        marginHorizontal: 20,
+        height: '100vh',
     },
     textList: {
         fontSize: 18,
@@ -88,5 +89,11 @@ export default StyleSheet.create({
     weather: {
         fontSize: 14,
         fontStyle: 'italic',
+    },
+    textResult: {
+        fontSize: 18,
+        color: 'blue',
+        textTransform: 'capitalize',
+        marginBottom: 20
     },
 })

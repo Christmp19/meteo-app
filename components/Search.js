@@ -55,6 +55,9 @@ const SearchStack = () => {
                 options={({ route }) => ({
                     title: 'Méteo / ' + route.params.city,
                     headerShown: true,
+                    headerTitleStyle: {
+                        textTransform: 'capitalize',
+                    }
                 })} />
         </Stack.Navigator>
     );

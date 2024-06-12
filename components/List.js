@@ -12,7 +12,8 @@ export default class List extends React.Component {
             report: null,
             loading: true,
             error: null
-        };
+        }
+        setTimeout(() => this.fetchWeather(), 1000);
     }
 
     componentDidMount() {
@@ -82,10 +83,10 @@ export default class List extends React.Component {
     }
 }
 
-List.navigationOptions = ({ route }) => {
-    const { city } = route.params;
+// List.navigationOptions = ({ route }) => {
+//     const { city } = route.params;
 
-    return {
-        title: 'Meteo / ' + city,
-    };
-};
+//     return {
+//         title: 'Meteo / ' + city,
+//     };
+// };
