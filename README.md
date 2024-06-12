@@ -5,6 +5,12 @@
     <td align="center">
       <img src="cover.png?raw=true" alt="Template Screenshot" width="300">
     </td>
+    <td align="center">
+      <img src="cover2.png?raw=true" alt="Template Screenshot" width="300">
+    </td>
+    <td align="center">
+      <img src="cover3.png?raw=true" alt="Template Screenshot" width="300">
+    </td>
   </tr>
 </table>
 
